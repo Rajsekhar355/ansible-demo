@@ -2,5 +2,5 @@
 app_user: "prolifics"
 http_host: "127.0.0.1"
 http_conf: "127.0.0.1.conf"
-http_port: "80"
+http_port: "81"
 disable_default: true
