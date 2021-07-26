@@ -2,7 +2,7 @@
 # DO Community Playbooks: Apache on Ubuntu 18.04
 ##################################################
 ---
-- hosts: 127.0.0.1
+- hosts: 192.168.0.110
   become: true
   vars_files:
     - vars/default.yml
