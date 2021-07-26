@@ -1,6 +1,6 @@
 ---
-app_user: "prolifics"
-http_host: "192.168.0.110"
-http_conf: "1192.168.0.110.conf"
+app_user: "ubuuntu"
+http_host: "ec2-52-15-194-156.us-east-2.compute.amazonaws.com"
+http_conf: " ec2-52-15-194-156.us-east-2.compute.amazonaws.com.conf"
 http_port: "81"
 disable_default: true
