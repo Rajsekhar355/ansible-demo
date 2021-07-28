@@ -1,6 +1,6 @@
 ---
 app_user: "ubuntu"
-http_host: "ec2-52-15-194-156.us-east-2.compute.amazonaws.com"
-http_conf: " ec2-52-15-194-156.us-east-2.compute.amazonaws.com.conf"
+http_host: "127.0.0.1"
+http_conf: "127.0.0.1.conf"
 http_port: "81"
 disable_default: true
