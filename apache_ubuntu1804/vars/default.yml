@@ -1,5 +1,5 @@
 ---
-app_user: "prolifics"
+app_user: "ubuntu"
 http_host: "127.0.0.1"
 http_conf: "127.0.0.1.conf"
 http_port: "81"
