@@ -31,6 +31,11 @@
       template:
         src: "files/apache.conf.j2"
         dest: "/etc/apache2/sites-available/{{ http_conf }}"
+        
+    - name: a2ensite {{ domain }}
+      command: a2ensite {{ domain }}
+        args:
+        creates: /etc/apache2/sites-enabled/{{ http_conf }}.conf
 
     - name: enabled mod_rewrite
       apache2_module: name=rewrite state=present
