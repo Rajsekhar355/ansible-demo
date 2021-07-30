@@ -36,6 +36,14 @@
       command: a2ensite {{ http_conf }}
       args:
         creates: /etc/apache2/sites-enabled/{{ http_conf }}.conf
+    - name: Enable new site
+      shell: /usr/sbin/a2ensite {{ http_conf }}
+      notify: Reload Apache
+      
+    - name: Disable default Apache site
+      shell: /usr/sbin/a2dissite 000-default.conf
+      when: disable_default
+      notify: Reload Apache
 
     - name: enabled mod_rewrite
       apache2_module: name=rewrite state=present
