@@ -41,11 +41,11 @@
       notify:
         - restart apache2
       
-   # - name: Disable default Apache site
-    #  shell: /usr/sbin/a2dissite 000-default.conf
-   #   when: disable_default
-    #  notify:
-    #    - restart apache2
+    - name: Disable default Apache site
+      shell: /usr/sbin/a2dissite 000-default.conf
+      when: disable_default
+      notify:
+        - restart apache2
 
     - name: enabled mod_rewrite
       apache2_module: name=rewrite state=present
@@ -66,7 +66,7 @@
     - name: restart apache2
       service: name=apache2 state=restarted
 
-     #- name: Disable default Apache site
+    #- name: Disable default Apache site
       # shell: /usr/sbin/a2dissite 000-default.conf
       # # when: disable_default
       # notify: Reload Apache
