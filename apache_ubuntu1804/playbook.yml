@@ -30,9 +30,6 @@
       - --include=*/
       - --include=*.js
       - --exclude=*
-        owner: "{{ app_user }}"
-        group: "{{ app_user }}"        
-        mode: 0755
 
     - name: Set up Apache virtualhost
       template:
