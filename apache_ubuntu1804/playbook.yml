@@ -23,9 +23,9 @@
         mode: '0755'       
     
     - name: Copy index test page
-      template:
-        src: "files/index.html.j2"
-        dest: "/var/www/{{ http_host }}/index.html"
+      synchronize:
+        src: "files"
+        dest: "/var/www/{{ http_host }}"
         
     - name: Set up Apache virtualhost
       template:
