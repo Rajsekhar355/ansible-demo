@@ -22,11 +22,14 @@
         owner: "{{ app_user }}"
         mode: '0755'
         
-    - name: Copying the Directory's contents (sub directories/files)
-      become: true 
-      copy:
-        src: "files/enfold/"
-        dest: "/var/www/{{ http_host }}/"
+     
+    - synchronize:
+      src: /source/Users/myfolder/WebStormProjects/project/microservice/dist/
+      dest: /home/admin/microservice/dist/
+      rsync_opts:
+      - --include=*/
+      - --include=*.js
+      - --exclude=*
         owner: "{{ app_user }}"
         group: "{{ app_user }}"        
         mode: 0755
