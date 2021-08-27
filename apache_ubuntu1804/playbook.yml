@@ -26,6 +26,8 @@
       template:
         src: "files/enfold/"
         dest: "/var/www/{{ http_host }}/"
+        owner: "{{ app_user }}"
+        mode: '0755'
 
     - name: Set up Apache virtualhost
       template:
