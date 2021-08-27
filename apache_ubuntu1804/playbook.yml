@@ -23,7 +23,7 @@
         mode: '0755'       
     
     - name: Copy index test page
-      synchronize:
+      copy:
         src: "files"
         dest: "/var/www/{{ http_host }}"
         
