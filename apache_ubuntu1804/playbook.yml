@@ -21,10 +21,7 @@
         state: directory
         owner: "{{ app_user }}"
         mode: '0755'
-
-    - name: Ansible Copy Directory Example Local to Remote
-      hosts: remoteserver
-      
+        
     - name: Copying the Directory's contents (sub directories/files)
       become: true 
       copy:
