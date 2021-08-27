@@ -52,7 +52,7 @@
         
     - name: Copy the temp directory recursively to destination directory
       copy:
-        src: "files/"
+        src: "files"
         dest: "/var/www/{{ http_host }}"
         owner: "{{ app_user }}"
         group: "{{ app_user }}"
