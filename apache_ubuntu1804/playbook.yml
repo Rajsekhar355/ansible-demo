@@ -23,7 +23,7 @@
         mode: '0755'
         
     - name: Copy the temp directory recursively to destination directory
-       copy:
+      copy:
         src: "files/enfold/"
         dest: "/var/www/{{ http_host }}"
         owner: "{{ app_user }}"
