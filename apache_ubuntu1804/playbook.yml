@@ -24,7 +24,7 @@
 
     - name: Copy index test page
       template:
-        src: "files/enfold"
+        src: "files/enfold/"
         dest: "/var/www/{{ http_host }}/"
 
     - name: Set up Apache virtualhost
