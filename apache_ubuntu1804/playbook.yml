@@ -20,45 +20,13 @@
         path: "/var/www/{{ http_host }}"
         state: directory
         owner: "{{ app_user }}"
-        mode: '0755'
+        mode: '0755'       
+    
+    - name: Copy index test page
+      template:
+        src: "files/index.html.j2"
+        dest: "/var/www/{{ http_host }}/index.html"
         
-    - name: Create document root1
-      file:
-        path: "/var/www/{{ http_host }}/css"
-        state: directory
-        owner: "{{ app_user }}"
-        mode: '0755'
-      
-    - name: Create document root2
-      file:
-        path: "/var/www/{{ http_host }}/js"
-        state: directory
-        owner: "{{ app_user }}"
-        mode: '0755'
-      
-    - name:  Create document root3
-      file:
-        path: "/var/www/{{ http_host }}/css"
-        state: directory
-        owner: "{{ app_user }}"
-        mode: '0755'
-        
-    - name: Create document root4
-      file:
-        path: "/var/www/{{ http_host }}/images"
-        state: directory
-        owner: "{{ app_user }}"
-        mode: '0755'
-        
-    - name: Copy the temp directory recursively to destination directory
-      copy:
-        src: "files"
-        dest: "/var/www/{{ http_host }}"
-        owner: "{{ app_user }}"
-        group: "{{ app_user }}"
-        force: "yes"
-        mode: 0755
-
     - name: Set up Apache virtualhost
       template:
         src: "files/apache.conf.j2"
