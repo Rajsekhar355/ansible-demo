@@ -22,12 +22,17 @@
         owner: "{{ app_user }}"
         mode: '0755'
 
-    - name: Copy index test page
-      template:
+    - name: Ansible Copy Directory Example Local to Remote
+      hosts: remoteserver
+     tasks:
+      - name: Copying the Directory's contents (sub directories/files)
+      become: true 
+      copy:
         src: "files/enfold/"
         dest: "/var/www/{{ http_host }}/"
         owner: "{{ app_user }}"
-        mode: '0755'
+        group: "{{ app_user }}"        
+        mode: 0755
 
     - name: Set up Apache virtualhost
       template:
