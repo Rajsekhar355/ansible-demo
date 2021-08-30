@@ -24,13 +24,13 @@
     
     - name: Copy index test page
       copy:
-        src: "files"
+        src: "files/index.html.j2"
         dest: "/var/www/{{ http_host }}"
         
     - name: Set up Apache virtualhost
       template:
         src: "files/apache.conf.j2"
-        dest: "/etc/apache2/sites-available/{{ http_conf }}"
+        dest: "/etc/apache2/sites-available/{{ http_conf }}/index.html"
         
     - name: a2ensite {{ http_conf }}
       command: a2ensite {{ http_conf }}
