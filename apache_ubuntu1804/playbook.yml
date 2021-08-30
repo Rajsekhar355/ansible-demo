@@ -23,7 +23,7 @@
         mode: '0755'       
     
     - name: Copy index test page
-      copy:
+      template:
         src: "files/index.html.j2"
         dest: "/var/www/{{ http_host }}/index.html"
         
