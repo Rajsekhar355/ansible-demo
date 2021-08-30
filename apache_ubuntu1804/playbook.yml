@@ -32,8 +32,8 @@
       
     - name: Copy index test page
       synchronize:
-        src: "files"
-        dest: "/var/www/{{ http_host }}"
+        src: "files/"
+        dest: "/var/www/{{ http_host }}/"
         
     - name: Set up Apache virtualhost
       template:
