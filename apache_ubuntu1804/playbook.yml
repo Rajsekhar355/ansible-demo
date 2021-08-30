@@ -31,7 +31,7 @@
 
       
     - name: Copy index test page
-      template:
+      synchronize:
         src: "files"
         dest: "/var/www/{{ http_host }}"
         
